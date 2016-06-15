@@ -10,4 +10,8 @@
 
 @implementation WYNewsListModel
 
+- (NSString *)description {
+
+    return [self yy_modelDescription];
+}
 @end
