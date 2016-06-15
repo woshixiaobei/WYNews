@@ -8,12 +8,15 @@
 
 #import "WYNewsListController.h"
 #import "WYNetworkManager.h"
+#import "WYNewsListModel.h"
 
 static NSString *cellId = @"cellId";
 
 @interface WYNewsListController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,weak) UITableView *tableView;
+
+@property (nonatomic,weak) NSMutableArray <WYNewsListModel *>*newsList;
 @end
 
 @implementation WYNewsListController
@@ -21,13 +24,24 @@ static NSString *cellId = @"cellId";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [WYNetworkManager sharedManager];
+    //[WYNetworkManager sharedManager];
     [self setupUI];
+    [self loadData];
 }
 
 #pragma mark-加载数据
 - (void)loadData {
-
+    
+    [[WYNetworkManager sharedManager] newsListWithChannel:@"T1348649079062" isPullup:NO completion:^(NSArray *array, NSError *error) {
+        
+        NSLog(@"%@",array);
+//        NSArray *list = [NSArray yy_modelArrayWithClass:[WYNewsListModel class] json:array];
+//        self.newsList = [NSMutableArray arrayWithArray:list];
+//        
+//        //刷新表格数据
+//        [self.tableView reloadData];
+        
+    }];
 
 }
 
