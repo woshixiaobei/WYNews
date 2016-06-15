@@ -13,6 +13,8 @@
 		0B451BCB1D117C6C007FDAB5 /* WYNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B451BCA1D117C6C007FDAB5 /* WYNetworkManager.m */; };
 		0B451BCF1D119FC7007FDAB5 /* WYNewsNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B451BCD1D119FC7007FDAB5 /* WYNewsNormalCell.m */; };
 		0B451BD01D119FC7007FDAB5 /* WYNewsNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B451BCE1D119FC7007FDAB5 /* WYNewsNormalCell.xib */; };
+		0B451BD51D11ABCD007FDAB5 /* WYNewsExtalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B451BD31D11ABCD007FDAB5 /* WYNewsExtalCell.m */; };
+		0B451BD61D11ABCD007FDAB5 /* WYNewsExtalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B451BD41D11ABCD007FDAB5 /* WYNewsExtalCell.xib */; };
 		0B96590F1D11431C00B57F1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B96590E1D11431C00B57F1C /* main.m */; };
 		0B9659121D11431C00B57F1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9659111D11431C00B57F1C /* AppDelegate.m */; };
 		0B9659421D11481B00B57F1C /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9659281D11481B00B57F1C /* NSArray+Log.m */; };
@@ -45,6 +47,9 @@
 		0B451BCC1D119FC7007FDAB5 /* WYNewsNormalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNewsNormalCell.h; sourceTree = "<group>"; };
 		0B451BCD1D119FC7007FDAB5 /* WYNewsNormalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsNormalCell.m; sourceTree = "<group>"; };
 		0B451BCE1D119FC7007FDAB5 /* WYNewsNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYNewsNormalCell.xib; sourceTree = "<group>"; };
+		0B451BD21D11ABCD007FDAB5 /* WYNewsExtalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNewsExtalCell.h; sourceTree = "<group>"; };
+		0B451BD31D11ABCD007FDAB5 /* WYNewsExtalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsExtalCell.m; sourceTree = "<group>"; };
+		0B451BD41D11ABCD007FDAB5 /* WYNewsExtalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYNewsExtalCell.xib; sourceTree = "<group>"; };
 		0B96590A1D11431C00B57F1C /* WYNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B96590E1D11431C00B57F1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0B9659101D11431C00B57F1C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,6 +146,9 @@
 				0B451BCC1D119FC7007FDAB5 /* WYNewsNormalCell.h */,
 				0B451BCD1D119FC7007FDAB5 /* WYNewsNormalCell.m */,
 				0B451BCE1D119FC7007FDAB5 /* WYNewsNormalCell.xib */,
+				0B451BD21D11ABCD007FDAB5 /* WYNewsExtalCell.h */,
+				0B451BD31D11ABCD007FDAB5 /* WYNewsExtalCell.m */,
+				0B451BD41D11ABCD007FDAB5 /* WYNewsExtalCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -339,6 +347,7 @@
 				0B451BD01D119FC7007FDAB5 /* WYNewsNormalCell.xib in Resources */,
 				0B9659521D1149E200B57F1C /* Assets.xcassets in Resources */,
 				0B96595C1D114F3A00B57F1C /* LaunchScreen.storyboard in Resources */,
+				0B451BD61D11ABCD007FDAB5 /* WYNewsExtalCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +421,7 @@
 				0B9659581D114B7F00B57F1C /* WYMainViewController.m in Sources */,
 				0B9659451D11481B00B57F1C /* NSString+CZBase64.m in Sources */,
 				0B451BCB1D117C6C007FDAB5 /* WYNetworkManager.m in Sources */,
+				0B451BD51D11ABCD007FDAB5 /* WYNewsExtalCell.m in Sources */,
 				0B451BCF1D119FC7007FDAB5 /* WYNewsNormalCell.m in Sources */,
 				0B9659441D11481B00B57F1C /* NSObject+CZRuntime.m in Sources */,
 				0B96594D1D11481B00B57F1C /* UIViewController+CZAddition.m in Sources */,

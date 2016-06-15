@@ -11,8 +11,10 @@
 #import "WYNewsListModel.h"
 #import "WYNewsNormalCell.h"
 #import <UIImageView+WebCache.h>
+#import "WYNewsExtalCell.h"
 
 static NSString *cellId = @"cellId";
+static NSString *extralCellId = @"extralCellId";
 
 @interface WYNewsListController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -55,7 +57,7 @@ static NSString *cellId = @"cellId";
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    WYNewsNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
+    WYNewsExtalCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     //cell.textLabel.text = _newsList[indexPath.row].title;
     
     WYNewsListModel *model = _newsList[indexPath.row];
@@ -66,6 +68,13 @@ static NSString *cellId = @"cellId";
     NSURL *url = [NSURL URLWithString:model.imgsrc];
     [cell.iconView sd_setImageWithURL:url];
     
+    //设置多图 - 如果没有不会进入循环
+    NSInteger index = 0;
+    for (NSDictionary *dict in model.imagextra) {
+        NSURL *url = [NSURL URLWithString:dict[@"imgsrc"]];
+        [cell.extralView[index] sd_setImageWithURL:url];
+        index ++;
+    }
     return cell;
 
 }
@@ -76,7 +85,8 @@ static NSString *cellId = @"cellId";
     [self.view addSubview:tv];
     
     //注册可重用标识符
-    [tv registerNib:[UINib nibWithNibName:@"WYNewsNormalCell" bundle:nil] forCellReuseIdentifier:cellId];
+    //[tv registerNib:[UINib nibWithNibName:@"WYNewsNormalCell" bundle:nil] forCellReuseIdentifier:cellId];
+    [tv registerNib:[UINib nibWithNibName:@"WYNewsExtalCell" bundle:nil] forCellReuseIdentifier:cellId];
     
     tv.dataSource = self;
     tv.delegate = self;
