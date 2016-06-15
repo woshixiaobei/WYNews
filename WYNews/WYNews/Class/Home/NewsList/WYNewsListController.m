@@ -10,6 +10,7 @@
 #import "WYNetworkManager.h"
 #import "WYNewsListModel.h"
 #import "WYNewsNormalCell.h"
+#import <UIImageView+WebCache.h>
 
 static NSString *cellId = @"cellId";
 
@@ -17,7 +18,7 @@ static NSString *cellId = @"cellId";
 
 @property (nonatomic,weak) UITableView *tableView;
 
-@property (nonatomic,strong ) NSMutableArray <WYNewsListModel *>*newsList;
+@property (nonatomic,strong) NSMutableArray <WYNewsListModel *>*newsList;
 @end
 
 @implementation WYNewsListController
@@ -55,7 +56,15 @@ static NSString *cellId = @"cellId";
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     WYNewsNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
-    cell.textLabel.text = _newsList[indexPath.row].title;
+    //cell.textLabel.text = _newsList[indexPath.row].title;
+    
+    WYNewsListModel *model = _newsList[indexPath.row];
+    cell.titleLabel.text = model.title;
+    cell.sourceLabel.text = model.source;
+    cell.replyLabel.text = @(model.replyCount).description;
+    
+    NSURL *url = [NSURL URLWithString:model.imgsrc];
+    [cell.iconView sd_setImageWithURL:url];
     
     return cell;
 
@@ -67,10 +76,15 @@ static NSString *cellId = @"cellId";
     [self.view addSubview:tv];
     
     //注册可重用标识符
-    [tv registerClass:[WYNewsNormalCell class] forCellReuseIdentifier:cellId];
+    [tv registerNib:[UINib nibWithNibName:@"WYNewsNormalCell" bundle:nil] forCellReuseIdentifier:cellId];
     
     tv.dataSource = self;
     tv.delegate = self;
+    
+    //自动行高设定
+    tv.rowHeight = UITableViewAutomaticDimension;
+    tv.estimatedRowHeight = 120;
+    
     
     [tv mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);

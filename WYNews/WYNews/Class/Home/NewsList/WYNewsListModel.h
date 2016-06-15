@@ -20,7 +20,7 @@
 /**
  *  图像URL来源
  */
-@property (nonatomic, copy) NSString *imagsrc;
+@property (nonatomic, copy) NSString *imgsrc;
 /**
  *  来源
  */
