@@ -22,6 +22,8 @@
 
 #pragma mark-添加子控制器
 - (void)addChildViewControllers {
+    //设置tabBar字体颜色
+   // self.tabBar.tintColor = [UIColor cz_colorWithHex:0xDF0000];
     
     NSArray *array = @[
                        @{@"clsName":@"UIViewController",@"title":@"首页",@"imageName":@"news"},
@@ -61,8 +63,6 @@
     //设置高亮状态
     NSString *imageNameHL = [NSString stringWithFormat:@"tabbar_icon_%@_highlight",dict[@"imageName"]];
     vc.tabBarItem.selectedImage = [[UIImage imageNamed:imageNameHL] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
-    
-    
     
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
     return nav;
