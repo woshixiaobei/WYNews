@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B451BBE1D1152B9007FDAB5 /* WYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B451BBD1D1152B9007FDAB5 /* WYHomeViewController.m */; };
+		0B451BC31D11780C007FDAB5 /* WYNewsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B451BC21D11780C007FDAB5 /* WYNewsListController.m */; };
 		0B96590F1D11431C00B57F1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B96590E1D11431C00B57F1C /* main.m */; };
 		0B9659121D11431C00B57F1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9659111D11431C00B57F1C /* AppDelegate.m */; };
 		0B9659421D11481B00B57F1C /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9659281D11481B00B57F1C /* NSArray+Log.m */; };
@@ -31,6 +32,8 @@
 /* Begin PBXFileReference section */
 		0B451BBC1D1152B9007FDAB5 /* WYHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYHomeViewController.h; sourceTree = "<group>"; };
 		0B451BBD1D1152B9007FDAB5 /* WYHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYHomeViewController.m; sourceTree = "<group>"; };
+		0B451BC11D11780C007FDAB5 /* WYNewsListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNewsListController.h; sourceTree = "<group>"; };
+		0B451BC21D11780C007FDAB5 /* WYNewsListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsListController.m; sourceTree = "<group>"; };
 		0B96590A1D11431C00B57F1C /* WYNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B96590E1D11431C00B57F1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0B9659101D11431C00B57F1C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -83,6 +86,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B451BBF1D1177C9007FDAB5 /* NewsDetail(新闻详情) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "NewsDetail(新闻详情)";
+			path = NewsDetail;
+			sourceTree = "<group>";
+		};
+		0B451BC01D1177C9007FDAB5 /* NewsList(新闻列表) */ = {
+			isa = PBXGroup;
+			children = (
+				0B451BC11D11780C007FDAB5 /* WYNewsListController.h */,
+				0B451BC21D11780C007FDAB5 /* WYNewsListController.m */,
+			);
+			name = "NewsList(新闻列表)";
+			path = NewsList;
+			sourceTree = "<group>";
+		};
 		0B9659011D11431C00B57F1C = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +198,8 @@
 		0B9659541D114B4900B57F1C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0B451BC01D1177C9007FDAB5 /* NewsList(新闻列表) */,
+				0B451BBF1D1177C9007FDAB5 /* NewsDetail(新闻详情) */,
 				0B451BBC1D1152B9007FDAB5 /* WYHomeViewController.h */,
 				0B451BBD1D1152B9007FDAB5 /* WYHomeViewController.m */,
 			);
@@ -332,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B9659491D11481B00B57F1C /* UIColor+CZAddition.m in Sources */,
+				0B451BC31D11780C007FDAB5 /* WYNewsListController.m in Sources */,
 				0B9659431D11481B00B57F1C /* NSAttributedString+CZAdditon.m in Sources */,
 				0B9659471D11481B00B57F1C /* NSString+CZPath.m in Sources */,
 				0B9659421D11481B00B57F1C /* NSArray+Log.m in Sources */,
