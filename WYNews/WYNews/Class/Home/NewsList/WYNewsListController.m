@@ -9,6 +9,7 @@
 #import "WYNewsListController.h"
 #import "WYNetworkManager.h"
 #import "WYNewsListModel.h"
+#import "WYNewsNormalCell.h"
 
 static NSString *cellId = @"cellId";
 
@@ -16,7 +17,7 @@ static NSString *cellId = @"cellId";
 
 @property (nonatomic,weak) UITableView *tableView;
 
-@property (nonatomic,weak) NSMutableArray <WYNewsListModel *>*newsList;
+@property (nonatomic,strong ) NSMutableArray <WYNewsListModel *>*newsList;
 @end
 
 @implementation WYNewsListController
@@ -34,12 +35,13 @@ static NSString *cellId = @"cellId";
     
     [[WYNetworkManager sharedManager] newsListWithChannel:@"T1348649079062" isPullup:NO completion:^(NSArray *array, NSError *error) {
         
-        NSLog(@"%@",array);
-//        NSArray *list = [NSArray yy_modelArrayWithClass:[WYNewsListModel class] json:array];
-//        self.newsList = [NSMutableArray arrayWithArray:list];
-//        
-//        //刷新表格数据
-//        [self.tableView reloadData];
+       // NSLog(@"%@",array);
+        //字典的数组 - 字典转模型
+        NSArray *list = [NSArray yy_modelArrayWithClass:[WYNewsListModel class] json:array];
+        self.newsList = [NSMutableArray arrayWithArray:list];
+        
+        //刷新表格数据
+        [self.tableView reloadData];
         
     }];
 
@@ -47,13 +49,13 @@ static NSString *cellId = @"cellId";
 
 #pragma mark-UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return _newsList.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
-    cell.textLabel.text = @(indexPath.row).description;
+    WYNewsNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
+    cell.textLabel.text = _newsList[indexPath.row].title;
     
     return cell;
 
@@ -65,7 +67,7 @@ static NSString *cellId = @"cellId";
     [self.view addSubview:tv];
     
     //注册可重用标识符
-    [tv registerClass:[UITableViewCell class] forCellReuseIdentifier:cellId];
+    [tv registerClass:[WYNewsNormalCell class] forCellReuseIdentifier:cellId];
     
     tv.dataSource = self;
     tv.delegate = self;
@@ -79,8 +81,4 @@ static NSString *cellId = @"cellId";
     _tableView = tv;
 
 }
-
-
-
-
 @end
