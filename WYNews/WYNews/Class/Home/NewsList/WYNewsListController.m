@@ -9,14 +9,11 @@
 #import "WYNewsListController.h"
 #import "WYNetworkManager.h"
 #import "WYNewsListModel.h"
-#import "WYNewsNormalCell.h"
 #import <UIImageView+WebCache.h>
-#import "WYNewsExtalCell.h"
 #import "WYNewsCell.h"
 
-static NSString *cellId = @"cellId";
+static NSString *normalCellId = @"normalCellId";
 static NSString *extralCellId = @"extralCellId";
-
 @interface WYNewsListController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,weak) UITableView *tableView;
@@ -58,10 +55,12 @@ static NSString *extralCellId = @"extralCellId";
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    WYNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
-    //cell.textLabel.text = _newsList[indexPath.row].title;
-    
     WYNewsListModel *model = _newsList[indexPath.row];
+    
+    NSString *cellId = (model.imagextra.count > 0) ? normalCellId : extralCellId;
+    
+    WYNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
+    
     cell.titleLabel.text = model.title;
     cell.sourceLabel.text = model.source;
     cell.replyLabel.text = @(model.replyCount).description;
@@ -86,8 +85,8 @@ static NSString *extralCellId = @"extralCellId";
     [self.view addSubview:tv];
     
     //注册可重用标识符
-    //[tv registerNib:[UINib nibWithNibName:@"WYNewsNormalCell" bundle:nil] forCellReuseIdentifier:cellId];
-    [tv registerNib:[UINib nibWithNibName:@"WYNewsExtalCell" bundle:nil] forCellReuseIdentifier:cellId];
+    [tv registerNib:[UINib nibWithNibName:@"WYNewsNormalCell" bundle:nil] forCellReuseIdentifier:normalCellId];
+    [tv registerNib:[UINib nibWithNibName:@"WYNewsExtalCell" bundle:nil] forCellReuseIdentifier:extralCellId];
     
     tv.dataSource = self;
     tv.delegate = self;
