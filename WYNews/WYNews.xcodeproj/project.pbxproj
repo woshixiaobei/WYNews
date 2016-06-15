@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0B451BBE1D1152B9007FDAB5 /* WYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B451BBD1D1152B9007FDAB5 /* WYHomeViewController.m */; };
 		0B451BC31D11780C007FDAB5 /* WYNewsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B451BC21D11780C007FDAB5 /* WYNewsListController.m */; };
+		0B451BC61D117BA2007FDAB5 /* WYNewsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B451BC51D117BA2007FDAB5 /* WYNewsListModel.m */; };
+		0B451BCB1D117C6C007FDAB5 /* WYNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B451BCA1D117C6C007FDAB5 /* WYNetworkManager.m */; };
 		0B96590F1D11431C00B57F1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B96590E1D11431C00B57F1C /* main.m */; };
 		0B9659121D11431C00B57F1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9659111D11431C00B57F1C /* AppDelegate.m */; };
 		0B9659421D11481B00B57F1C /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9659281D11481B00B57F1C /* NSArray+Log.m */; };
@@ -34,6 +36,10 @@
 		0B451BBD1D1152B9007FDAB5 /* WYHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYHomeViewController.m; sourceTree = "<group>"; };
 		0B451BC11D11780C007FDAB5 /* WYNewsListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNewsListController.h; sourceTree = "<group>"; };
 		0B451BC21D11780C007FDAB5 /* WYNewsListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsListController.m; sourceTree = "<group>"; };
+		0B451BC41D117BA2007FDAB5 /* WYNewsListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNewsListModel.h; sourceTree = "<group>"; };
+		0B451BC51D117BA2007FDAB5 /* WYNewsListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsListModel.m; sourceTree = "<group>"; };
+		0B451BC91D117C6C007FDAB5 /* WYNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNetworkManager.h; sourceTree = "<group>"; };
+		0B451BCA1D117C6C007FDAB5 /* WYNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNetworkManager.m; sourceTree = "<group>"; };
 		0B96590A1D11431C00B57F1C /* WYNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B96590E1D11431C00B57F1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0B9659101D11431C00B57F1C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,11 +103,30 @@
 		0B451BC01D1177C9007FDAB5 /* NewsList(新闻列表) */ = {
 			isa = PBXGroup;
 			children = (
+				0B451BC71D117BA7007FDAB5 /* Model */,
 				0B451BC11D11780C007FDAB5 /* WYNewsListController.h */,
 				0B451BC21D11780C007FDAB5 /* WYNewsListController.m */,
 			);
 			name = "NewsList(新闻列表)";
 			path = NewsList;
+			sourceTree = "<group>";
+		};
+		0B451BC71D117BA7007FDAB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0B451BC41D117BA2007FDAB5 /* WYNewsListModel.h */,
+				0B451BC51D117BA2007FDAB5 /* WYNewsListModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0B451BC81D117C10007FDAB5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0B451BC91D117C6C007FDAB5 /* WYNetworkManager.h */,
+				0B451BCA1D117C6C007FDAB5 /* WYNetworkManager.m */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		0B9659011D11431C00B57F1C = {
@@ -149,6 +174,7 @@
 		0B9659241D11481B00B57F1C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0B451BC81D117C10007FDAB5 /* Network */,
 				0B9659251D11481B00B57F1C /* Additions */,
 			);
 			path = Tools;
@@ -362,11 +388,13 @@
 				0B9659121D11431C00B57F1C /* AppDelegate.m in Sources */,
 				0B9659481D11481B00B57F1C /* UIButton+CZAddition.m in Sources */,
 				0B96594C1D11481B00B57F1C /* UIView+CZAddition.m in Sources */,
+				0B451BC61D117BA2007FDAB5 /* WYNewsListModel.m in Sources */,
 				0B9659461D11481B00B57F1C /* NSString+CZHash.m in Sources */,
 				0B96594A1D11481B00B57F1C /* UILabel+CZAddition.m in Sources */,
 				0B451BBE1D1152B9007FDAB5 /* WYHomeViewController.m in Sources */,
 				0B9659581D114B7F00B57F1C /* WYMainViewController.m in Sources */,
 				0B9659451D11481B00B57F1C /* NSString+CZBase64.m in Sources */,
+				0B451BCB1D117C6C007FDAB5 /* WYNetworkManager.m in Sources */,
 				0B9659441D11481B00B57F1C /* NSObject+CZRuntime.m in Sources */,
 				0B96594D1D11481B00B57F1C /* UIViewController+CZAddition.m in Sources */,
 				0B96594B1D11481B00B57F1C /* UIScreen+CZAddition.m in Sources */,

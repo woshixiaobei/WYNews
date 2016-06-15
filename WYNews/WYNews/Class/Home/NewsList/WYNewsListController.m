@@ -7,8 +7,10 @@
 //
 
 #import "WYNewsListController.h"
+#import "WYNetworkManager.h"
 
 static NSString *cellId = @"cellId";
+
 @interface WYNewsListController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,weak) UITableView *tableView;
@@ -19,7 +21,14 @@ static NSString *cellId = @"cellId";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [WYNetworkManager sharedManager];
     [self setupUI];
+}
+
+#pragma mark-加载数据
+- (void)loadData {
+
+
 }
 
 #pragma mark-UITableViewDataSource
