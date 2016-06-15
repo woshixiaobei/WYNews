@@ -12,6 +12,7 @@
 #import "WYNewsNormalCell.h"
 #import <UIImageView+WebCache.h>
 #import "WYNewsExtalCell.h"
+#import "WYNewsCell.h"
 
 static NSString *cellId = @"cellId";
 static NSString *extralCellId = @"extralCellId";
@@ -57,7 +58,7 @@ static NSString *extralCellId = @"extralCellId";
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    WYNewsExtalCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
+    WYNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     //cell.textLabel.text = _newsList[indexPath.row].title;
     
     WYNewsListModel *model = _newsList[indexPath.row];

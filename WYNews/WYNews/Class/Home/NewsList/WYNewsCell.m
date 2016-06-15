@@ -1,14 +1,14 @@
 //
-//  WYNewsNormalCell.m
+//  WYNewsCell.m
 //  WYNews
 //
-//  Created by 小贝 on 16/6/15.
+//  Created by 小贝 on 16/6/16.
 //  Copyright © 2016年 小贝. All rights reserved.
 //
 
-#import "WYNewsNormalCell.h"
+#import "WYNewsCell.h"
 
-@implementation WYNewsNormalCell
+@implementation WYNewsCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
