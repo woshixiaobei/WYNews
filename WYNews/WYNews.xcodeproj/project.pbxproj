@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B451BBE1D1152B9007FDAB5 /* WYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B451BBD1D1152B9007FDAB5 /* WYHomeViewController.m */; };
 		0B96590F1D11431C00B57F1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B96590E1D11431C00B57F1C /* main.m */; };
 		0B9659121D11431C00B57F1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9659111D11431C00B57F1C /* AppDelegate.m */; };
 		0B9659421D11481B00B57F1C /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9659281D11481B00B57F1C /* NSArray+Log.m */; };
@@ -28,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B451BBC1D1152B9007FDAB5 /* WYHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYHomeViewController.h; sourceTree = "<group>"; };
+		0B451BBD1D1152B9007FDAB5 /* WYHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYHomeViewController.m; sourceTree = "<group>"; };
 		0B96590A1D11431C00B57F1C /* WYNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B96590E1D11431C00B57F1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0B9659101D11431C00B57F1C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 		0B9659541D114B4900B57F1C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0B451BBC1D1152B9007FDAB5 /* WYHomeViewController.h */,
+				0B451BBD1D1152B9007FDAB5 /* WYHomeViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 				0B96594C1D11481B00B57F1C /* UIView+CZAddition.m in Sources */,
 				0B9659461D11481B00B57F1C /* NSString+CZHash.m in Sources */,
 				0B96594A1D11481B00B57F1C /* UILabel+CZAddition.m in Sources */,
+				0B451BBE1D1152B9007FDAB5 /* WYHomeViewController.m in Sources */,
 				0B9659581D114B7F00B57F1C /* WYMainViewController.m in Sources */,
 				0B9659451D11481B00B57F1C /* NSString+CZBase64.m in Sources */,
 				0B9659441D11481B00B57F1C /* NSObject+CZRuntime.m in Sources */,
