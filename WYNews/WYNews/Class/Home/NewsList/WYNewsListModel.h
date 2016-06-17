@@ -32,6 +32,6 @@
 /**
  *  多图新闻的其余多个图片
  */
-@property (nonatomic, strong) NSArray *imagextra;
+@property (nonatomic, strong) NSArray *imgextra;
 
 @end

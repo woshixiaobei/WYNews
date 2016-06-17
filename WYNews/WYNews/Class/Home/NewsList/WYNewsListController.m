@@ -57,8 +57,15 @@ static NSString *extralCellId = @"extralCellId";
 
     WYNewsListModel *model = _newsList[indexPath.row];
     
-    NSString *cellId = (model.imagextra.count > 0) ? normalCellId : extralCellId;
+   // NSString *cellId = (model.imgextra.count > 0) ? normalCellId : extralCellId;
     
+    NSString *cellId;
+    if (model.imgextra.count > 0) {
+        cellId = extralCellId;
+    }else {
+        cellId = normalCellId;
+    
+    }
     WYNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     
     cell.titleLabel.text = model.title;
@@ -70,7 +77,7 @@ static NSString *extralCellId = @"extralCellId";
     
     //设置多图 - 如果没有不会进入循环
     NSInteger index = 0;
-    for (NSDictionary *dict in model.imagextra) {
+    for (NSDictionary *dict in model.imgextra) {
         NSURL *url = [NSURL URLWithString:dict[@"imgsrc"]];
         [cell.extralView[index] sd_setImageWithURL:url];
         index ++;
